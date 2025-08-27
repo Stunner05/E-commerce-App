@@ -1,8 +1,10 @@
 import Link from "next/link";
+import NavLink from "@/components/nav-links";
 
 export default function HomePage() {
 	return (
-		<main className="max-w-6xl mx-auto px-4 py-10 text-center">
+
+		<main id="home" className="max-w-6xl mx-auto px-4 py-10 text-center">
 			<h1 className="text-4xl font-bold mb-4">Welcome to MyStore 🛍️</h1>
 			<p className="text-gray-600 mb-8">
 				Discover the latest products at the best prices.
@@ -27,7 +29,7 @@ export default function HomePage() {
 			{/* Featured Section */}
 			<section className="mt-16">
 				<h2 className="text-2xl font-semibold mb-6">Featured Products</h2>
-				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+				<div className="grid grid-cols-1 sm:gr id-cols-2 md:grid-cols-3 gap-6">
 					{/* Mock featured products */}
 					{[
 						{ id: 1, name: "Wireless Headphones", price: 120 },

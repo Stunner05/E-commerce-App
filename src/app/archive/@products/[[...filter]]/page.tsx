@@ -10,6 +10,7 @@ import {
 } from "../../../../lib/products";
 import Link from "next/link";
 import { decode } from "punycode";
+import NavLink from "@/components/nav-links";
 
 interface ProductParams {
 	filter: string;
@@ -24,7 +25,6 @@ export default function FilteredProducts({
 	const filter = decodeURIComponent(params.filter)
 		.toLowerCase()
 		.replace(/-/g, " ");;
-	console.log("🚀 ~ FilteredProducts ~ filter:", filter);
 
 	const selectedBrand = filter;
 	const brandsLink = getAvailableBrands();
@@ -32,7 +32,6 @@ export default function FilteredProducts({
 	let brands;
 	if (selectedBrand) {
 		brands = getProductsByBrand(selectedBrand);
-		console.log("🚀 ~ FilteredProducts ~ brands:", brands);
 	}
 	let brandsContent = (
 		<>
@@ -57,7 +56,7 @@ export default function FilteredProducts({
 							const href = `/archive/${brand}`;
 							return (
 								<li key={brand}>
-									<Link href={href}>{brand}</Link>
+									<NavLink href={href}>{brand}</NavLink>
 								</li>
 							);
 						})}
